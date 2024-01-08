@@ -1,7 +1,7 @@
 const app = require("./app");
 const cloudinary = require("cloudinary").v2;
 
-const port = process.env.PORT || 6500;
+const port = process.env.SERVER_PORT || 6500;
 const databaseConnection = require("./config/database");
 databaseConnection();
 cloudinary.config({
