@@ -1,5 +1,5 @@
 const adminModel = require("../models/Admin.models");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 exports.createAdmin = async (req, res) => {
