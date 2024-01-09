@@ -15,6 +15,18 @@ app.use(
     optionsSuccessStatus: 204,
   })
 );
+app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://imran-archive.vercel.app/"
+  );
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 const Admin = require("./routes/Admin.routes");
 const File = require("./routes/File.routes");
 app.use("/api/v1/admin", Admin);

@@ -57,7 +57,13 @@ exports.adminLogIn = async (req, res) => {
     admin.tokens.push({ token });
     await admin.save();
 
-    const cookieOptions = { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 };
+    const cookieOptions = {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24,
+      sameSite: "None",
+      secure: true,
+      domain: "https://imran-archive.vercel.app/",
+    };
     res.cookie("token", token, cookieOptions);
 
     return res.status(200).json({
