@@ -1,9 +1,15 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "node@14",
-      "maxDuration": 30
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
     }
-  },
-  "main": "server.js"
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ]
 }
