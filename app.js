@@ -8,7 +8,7 @@ require("dotenv").config();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://imran-archive.vercel.app/",
+    origin: "https://imran-archive.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,
