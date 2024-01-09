@@ -63,7 +63,7 @@ exports.adminLogIn = async (req, res) => {
       sameSite: "None",
       secure: true,
       domain: "imran-archive.vercel.app",
-      path: "/login",
+      path: "/",
     };
 
     res.cookie("token", token, cookieOptions);
