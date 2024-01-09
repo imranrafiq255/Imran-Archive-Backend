@@ -71,3 +71,18 @@ exports.adminLogIn = async (req, res) => {
     });
   }
 };
+
+exports.loadAdmin = async (req, res) => {
+  try {
+    res.status(201).json({
+      success: true,
+      isAuthenticated: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+      isAuthenticated: false,
+    });
+  }
+};
