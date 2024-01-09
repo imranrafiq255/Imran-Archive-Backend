@@ -92,3 +92,17 @@ exports.loadAdmin = async (req, res) => {
     });
   }
 };
+exports.signOut = (req, res) => {
+  try {
+    res.clearCookie("token");
+    return res.status(201).json({
+      success: true,
+      message: "You logged out successfully",
+    });
+  } catch (error) {
+    return res.status(201).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
