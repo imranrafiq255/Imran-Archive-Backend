@@ -58,7 +58,6 @@ exports.adminLogIn = async (req, res) => {
     await admin.save();
 
     const cookieOptions = {
-      httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24,
       sameSite: "None",
       secure: true,
