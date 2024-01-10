@@ -14,7 +14,7 @@ app.use(
     // optionsSuccessStatus: 204,
   })
 );
-app.set("trust proxy", 1);
+// app.set("trust proxy", 1);
 const Admin = require("./routes/Admin.routes");
 const File = require("./routes/File.routes");
 app.use("/api/v1/admin", Admin);
