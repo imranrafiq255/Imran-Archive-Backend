@@ -6,16 +6,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require("dotenv").config();
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://imran-archive.vercel.app",
-    // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    // optionsSuccessStatus: 204,
-  })
-);
-app.set("trust proxy", 1);
-
+// app.use(
+//   cors({
+//     origin: "https://imran-archive.vercel.app",
+//     // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true,
+//     // optionsSuccessStatus: 204,
+//   })
+// );
+// app.set("trust proxy", 1);
+app.use(cors());
 const Admin = require("./routes/Admin.routes");
 const File = require("./routes/File.routes");
 app.use("/api/v1/admin", Admin);
